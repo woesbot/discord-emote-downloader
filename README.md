@@ -1,4 +1,4 @@
-# discord-emoji-downloader
+# discord-emote-downloader
 
 ## Installation
 
