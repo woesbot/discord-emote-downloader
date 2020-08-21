@@ -38,7 +38,7 @@ def main():
                 # TODO: Make this faster
                 # TODO: Show how many emotes were downloaded in total
                 # TODO: Show how long it took?
-                logging.info('\nDumping from all guilds... (This may take a while)\n')
+                logging.info('Dumping from all guilds... (This may take a while)')
 
                 for guild in user_guilds:
                     dump_emotes(guild['id'])
