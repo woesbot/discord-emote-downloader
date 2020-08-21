@@ -90,7 +90,7 @@ def dump_emotes(guild_id):
 
         else:
             emote_list = res.json()['emojis']
-            logging.info(f'\nDumping {len(emote_list)} emotes... from {res.json()["name"]}')
+            logging.info(f'Dumping {len(emote_list)} emotes... from {res.json()["name"]}')
 
             task_list = [asyncio.ensure_future(download_emote(emote)) for emote in emote_list]
             loop = asyncio.get_event_loop()
