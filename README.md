@@ -1,4 +1,4 @@
-# discord-emoji-downloader
+# discord-emote-downloader
 
 ## Installation
 
@@ -22,6 +22,9 @@ Paste your discord token in the ```token``` field found in in ```settings.json``
 If you don't know how to get your token follow this [guide](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs)
 
 ## Usage
+
+![Showcase](https://i.imgur.com/woLkuvU.png)
+
 ```python
 python dump.py 
 ```

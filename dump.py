@@ -18,6 +18,7 @@ sanitize = lambda string: ''.join(char for char in string.replace(' ', '_') if c
 
 
 def print_guilds(guild_list):
+    print('-' * 50)
     for index in range(len(guild_list)):
         print(f'[{index + 1:02d}] {guild_list[index]["name"]}')
 
@@ -33,12 +34,13 @@ def main():
         try:
             print('\n[A] Dump emotes from all guilds\n[R] Print guild list\n[Q] Quit\n')
             index = input('Guild Index > ').lower()
+            print('-' * 50)
 
             if index == 'a':
                 # TODO: Make this faster
                 # TODO: Show how many emotes were downloaded in total
                 # TODO: Show how long it took?
-                logging.info('\nDumping from all guilds... (This may take a while)\n')
+                logging.info('Dumping from all guilds... (This may take a while)')
 
                 for guild in user_guilds:
                     dump_emotes(guild['id'])
@@ -90,7 +92,7 @@ def dump_emotes(guild_id):
 
         else:
             emote_list = res.json()['emojis']
-            logging.info(f'\nDumping {len(emote_list)} emotes... from {res.json()["name"]}')
+            logging.info(f'Dumping {len(emote_list)} emotes... from {res.json()["name"]}')
 
             task_list = [asyncio.ensure_future(download_emote(emote)) for emote in emote_list]
             loop = asyncio.get_event_loop()
@@ -99,6 +101,7 @@ def dump_emotes(guild_id):
 
             create_archive(guild_name, results)
             logging.info('Done.')
+            print('-' * 50)
 
 
 def create_archive(zip_name, data):
